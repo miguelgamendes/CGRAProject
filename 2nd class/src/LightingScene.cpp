@@ -30,7 +30,7 @@ float globalAmbientLight[4]= {0.0,0.0,0.0,1.0};//{0.2,0.2,0.2,1.0};
 // Coefficients for material A
 float ambA[3] = {0.2, 0.2, 0.2};
 float difA[3] = {0.6, 0.6, 0.6};
-float specA[3] = {0.0, 0.0, 0.8};//{0.8, 0.8, 0.8};
+float specA[3] = {0.0, 0.8, 0.8};//{0.8, 0.8, 0.8};
 float shininessA = 120.f;
 
 // Coefficients for material B
@@ -58,6 +58,7 @@ void LightingScene::init()
 
 	light0 = new CGFlight(GL_LIGHT0, light0_pos);
 	light0->setAmbient(ambientNull);
+	light0->setSpecular(yellow);
 
 	//light0->disable();
 	light0->enable();
@@ -67,6 +68,26 @@ void LightingScene::init()
 	
 	//light1->disable();
 	light1->enable();
+
+	//light 2
+	light2 = new CGFlight(GL_LIGHT2, light2_pos);
+	light2->setAmbient(ambientNull);
+	light2->setKc(0.0f);
+	light2->setKl(1.0f);
+	light2->setKq(0.0f);
+
+	light2->enable();
+
+
+	//light 3
+	light3 = new CGFlight(GL_LIGHT3, light3_pos);
+	light3->setAmbient(ambientNull);
+	light3->setSpecular(yellow);
+	light3->setKc(0.0f);
+	light3->setKl(0.0f);
+	light3->setKq(0.2f);
+
+	light3->enable();
 	
 	// Uncomment below to enable normalization of lighting normal vectors
 	glEnable (GL_NORMALIZE);
@@ -101,6 +122,8 @@ void LightingScene::display()
 
 	light0->draw();
 	light1->draw();
+	light2->draw();
+	light3->draw();
 	
 	// Draw axis
 	axis.draw();
