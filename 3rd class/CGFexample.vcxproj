@@ -71,6 +71,7 @@
     <ClCompile Include="src\Floor.cpp" />
     <ClCompile Include="src\LightingScene.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\myCylinder.cpp" />
     <ClCompile Include="src\Plane.cpp" />
     <ClCompile Include="src\Table.cpp" />
     <ClCompile Include="src\UnitCube.cpp" />
@@ -80,6 +81,7 @@
     <ClInclude Include="src\ExampleObject.h" />
     <ClInclude Include="src\Floor.h" />
     <ClInclude Include="src\LightingScene.h" />
+    <ClInclude Include="src\myCylinder.h" />
     <ClInclude Include="src\Plane.h" />
     <ClInclude Include="src\Table.h" />
     <ClInclude Include="src\TPscene.h" />

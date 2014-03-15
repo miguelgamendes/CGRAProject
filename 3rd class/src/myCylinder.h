@@ -4,10 +4,12 @@
 #include "CGF/CGFobject.h"
 
 class myCylinder : public CGFobject {
-
-	public:
-		myCylinder(int slices, int stacks/*, bool smooth*/);
-
+private:
+	int slices, stacks;
+	double angle;
+public:
+	myCylinder(int slices, int stacks/*, bool smooth*/);
+	void draw();
 };
 
 

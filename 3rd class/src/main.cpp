@@ -9,6 +9,7 @@
 #include "CGFapplication.h"
 #include "LightingScene.h"
 #include "Plane.h"
+#include "myCylinder.h"
 
 
 using std::cout;

@@ -4,6 +4,7 @@
 #include "Table.h"
 #include "Plane.h"
 #include "Chair.h"
+#include "myCylinder.h"
 
 #include <math.h>
 
@@ -47,6 +48,9 @@ void LightingScene::init()
 	// Enables lighting computations
 	glEnable(GL_LIGHTING);
 
+	// Enables the Flat Shading
+	glShadeModel(GL_FLAT);
+
 	// Sets up some lighting parameters
 	// Computes lighting only using the front face normals and materials
 	glLightModelf(GL_LIGHT_MODEL_TWO_SIDE, GL_FALSE);  
@@ -85,7 +89,7 @@ void LightingScene::init()
 	light3->setSpecular(yellow);
 	light3->setKc(0.0f);
 	light3->setKl(0.0f);
-	light3->setKq(0.2f);
+	light3->setKq(1.0f);
 
 	light3->enable();
 	
@@ -98,6 +102,7 @@ void LightingScene::init()
 	chair = new Chair();
 	boardA = new Plane(BOARD_A_DIVISIONS);
 	boardB = new Plane(BOARD_B_DIVISIONS);
+	myCyl = new myCylinder(6,1);
 	
 	//Declares materials
 	materialA = new CGFappearance(ambA,difA,specA,shininessA);
@@ -156,11 +161,18 @@ void LightingScene::display()
 		chair->draw();
 	glPopMatrix();
 
+	//myCylinder test
+	glPushMatrix();
+		glTranslated(2,2,2);
+		myCyl->draw();
+	glPopMatrix();
+
 
 	//Floor
 	glPushMatrix();
 		glTranslated(7.5,0,7.5);
 		glScaled(15,0.2,15);
+		materialB->apply();
 		wall->draw();
 	glPopMatrix();
 
@@ -168,8 +180,8 @@ void LightingScene::display()
 	glPushMatrix();
 		glTranslated(0,4,7.5);
 		glRotated(-90.0,0,0,1);
-
 		glScaled(8,0.2,15);
+		materialB->apply();
 		wall->draw();
 	glPopMatrix();
 
@@ -180,7 +192,6 @@ void LightingScene::display()
 		glScaled(15,0.2,8);
 		wall->draw();
 	glPopMatrix();
-
 
 	// Board A
 	glPushMatrix();
