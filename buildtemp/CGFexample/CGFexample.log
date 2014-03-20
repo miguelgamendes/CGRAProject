@@ -1,10 +1,11 @@
-﻿Build started 15-03-2014 08:49:39.
+﻿Build started 20-03-2014 20:03:00.
      1>Project "C:\Users\Wake\Documents\CGRA_Git\CGRAProject\3rd class\CGFexample.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Touching "..\buildtemp\CGFexample\CGFexample.unsuccessfulbuild".
+         Creating "..\buildtemp\CGFexample\CGFexample.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"..\buildtemp\CGFexample\\" /Fd"..\buildtemp\CGFexample\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt src\myCylinder.cpp
          myCylinder.cpp
+     1>c:\users\wake\documents\cgra_git\cgraproject\3rd class\src\mycylinder.cpp(38): warning C4552: '-' : operator has no effect; expected operator with side-effect
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"bin\CGFexample.exe" /NOLOGO glew32.lib CGFlib.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"..\buildtemp\CGFexample\CGFexample.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Wake\Documents\CGRA_Git\CGRAProject\3rd class\bin\CGFexample.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"bin\CGFexample.lib" /MACHINE:X86 ..\buildtemp\CGFexample\Chair.obj
          ..\buildtemp\CGFexample\ExampleObject.obj
@@ -37,4 +38,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.78
+Time Elapsed 00:00:01.66

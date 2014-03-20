@@ -102,7 +102,7 @@ void LightingScene::init()
 	chair = new Chair();
 	boardA = new Plane(BOARD_A_DIVISIONS);
 	boardB = new Plane(BOARD_B_DIVISIONS);
-	myCyl = new myCylinder(6,1);
+	myCyl = new myCylinder(12,1);
 	
 	//Declares materials
 	materialA = new CGFappearance(ambA,difA,specA,shininessA);
