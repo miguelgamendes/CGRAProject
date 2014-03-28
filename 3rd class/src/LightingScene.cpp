@@ -49,7 +49,7 @@ void LightingScene::init()
 	glEnable(GL_LIGHTING);
 
 	// Enables the Flat Shading
-	glShadeModel(GL_FLAT);
+	glShadeModel(GL_SMOOTH);
 
 	// Sets up some lighting parameters
 	// Computes lighting only using the front face normals and materials
@@ -102,7 +102,8 @@ void LightingScene::init()
 	chair = new Chair();
 	boardA = new Plane(BOARD_A_DIVISIONS);
 	boardB = new Plane(BOARD_B_DIVISIONS);
-	myCyl = new myCylinder(12,1);
+	myCyl = new myCylinder(6,5,false);
+	myCyl2 = new myCylinder(6,5,true);
 	
 	//Declares materials
 	materialA = new CGFappearance(ambA,difA,specA,shininessA);
@@ -161,12 +162,21 @@ void LightingScene::display()
 		chair->draw();
 	glPopMatrix();
 
-	//myCylinder test
+	//Cylinder WITHOUT smooth
 	glPushMatrix();
-		glTranslated(2,2,2);
+		glScaled(1.0,10.0,1.0);
+		glTranslated(6,0.0,2.0);
+		glRotated(-90.0, 1.0, 0.0, 0.0);
 		myCyl->draw();
 	glPopMatrix();
 
+	//Cylinder WITH smooth
+	glPushMatrix();
+		glScaled(1.0,10.0,1.0);
+		glTranslated(9,0.0,2.0);
+		glRotated(-90.0, 1.0, 0.0, 0.0);
+		myCyl->draw();
+	glPopMatrix();
 
 	//Floor
 	glPushMatrix();

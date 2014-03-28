@@ -5,11 +5,12 @@
 
 class myCylinder : public CGFobject {
 private:
-	int slices;
+	int slices, stacks;
 	double cellSize;
-	double angle;
+	double delta;
+	bool smooth;
 public:
-	myCylinder(int slices, int stacks/*, bool smooth*/);
+	myCylinder(int slices, int stacks, bool smooth);
 	void draw();
 };
 

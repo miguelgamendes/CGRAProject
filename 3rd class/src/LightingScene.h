@@ -19,6 +19,7 @@ public:
 	CGFlight* light2;
 	CGFlight* light3;
 	myCylinder* myCyl;
+	myCylinder* myCyl2;
 
 	Table* table;
 	Chair* chair;
