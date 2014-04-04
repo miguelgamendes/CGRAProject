@@ -48,7 +48,7 @@ void LightingScene::init()
 	// Enables lighting computations
 	glEnable(GL_LIGHTING);
 
-	// Enables the Flat Shading
+	// Enables Flat Shading
 	glShadeModel(GL_SMOOTH);
 
 	// Sets up some lighting parameters
@@ -106,9 +106,8 @@ void LightingScene::init()
 	myCyl2 = new myCylinder(6,5,true);
 	
 	//Declares materials
-	materialA = new CGFappearance(ambA,difA,specA,shininessA);
-	materialB = new CGFappearance(ambB,difB,specB,shininessB);
-
+	materialA = new CGFappearance(ambA, difA, specA, shininessA);
+	materialB = new CGFappearance(ambB, difB, specB, shininessB);
 }
 
 void LightingScene::display() 
@@ -208,7 +207,7 @@ void LightingScene::display()
 		glTranslated(4,4,0.2);
 		glScaled(BOARD_WIDTH,BOARD_HEIGHT,1);
 		glRotated(90.0,1,0,0);
-		materialA->apply();
+		//materialA->apply();
 		boardA->draw();
 	glPopMatrix();
 	

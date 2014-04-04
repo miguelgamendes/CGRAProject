@@ -1,6 +1,8 @@
 #pragma once
 
 #include "CGF/CGFobject.h"
+#include "CGFAppearance.h"
+
 class Plane
 {
 public:
@@ -10,5 +12,6 @@ public:
 	void draw();
 private:
 	int _numDivisions; // Number of triangles that constitute rows/columns
+	CGFappearance* slidesAppearance;
 };
 
