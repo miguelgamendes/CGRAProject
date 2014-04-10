@@ -10,8 +10,8 @@ public:
 	Plane(int);
 	~Plane(void);
 	void draw();
+	void draw(CGFappearance* appearance); 
 private:
 	int _numDivisions; // Number of triangles that constitute rows/columns
-	CGFappearance* slidesAppearance;
 };
 

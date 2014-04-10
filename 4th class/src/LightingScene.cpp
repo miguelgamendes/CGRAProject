@@ -40,6 +40,18 @@ float difB[3] = {0.6, 0.6, 0.6};
 float specB[3] = {0.8, 0.8, 0.8};
 float shininessB = 120.f;
 
+// Coefficients for slides material
+float ambSlides[3] = {0.2, 0.2, 0.2};
+float difSlides[3] = {0.8, 0.8, 0.8};
+float specSlides[3] = {0.3, 0.3, 0.3};
+float shininessSlides = 40.0f;
+
+// COefficients for white board material
+float ambBoard[3] = {0.2, 0.2, 0.2};
+float difBoard[3] = {0.3, 0.3, 0.3};
+float specBoard[3] = {0.4, 0.4, 0.4};
+float shininessBoard = 80.0f;
+
 float ambientNull[4]={0,0,0,1};
 float yellow[4]={1,1,0,1};
 
@@ -108,6 +120,12 @@ void LightingScene::init()
 	//Declares materials
 	materialA = new CGFappearance(ambA, difA, specA, shininessA);
 	materialB = new CGFappearance(ambB, difB, specB, shininessB);
+	slidesAppearance = new CGFappearance(ambSlides, difSlides, specSlides, shininessSlides);
+	slidesAppearance->setTexture("slides.png");
+	boardAppearance = new CGFappearance(ambBoard, difBoard, specBoard, shininessBoard);
+	boardAppearance->setTexture("board.png");
+	windowAppearance = new CGFappearance();
+	windowAppearance->setTexture("window.png");
 }
 
 void LightingScene::display() 
@@ -190,7 +208,9 @@ void LightingScene::display()
 		glTranslated(0,4,7.5);
 		glRotated(-90.0,0,0,1);
 		glScaled(8,0.2,15);
-		materialB->apply();
+		//materialB->apply();
+		//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
+		//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
 		wall->draw();
 	glPopMatrix();
 
@@ -208,7 +228,7 @@ void LightingScene::display()
 		glScaled(BOARD_WIDTH,BOARD_HEIGHT,1);
 		glRotated(90.0,1,0,0);
 		//materialA->apply();
-		boardA->draw();
+		boardA->draw(slidesAppearance);
 	glPopMatrix();
 	
 	//PlaneB
@@ -216,8 +236,8 @@ void LightingScene::display()
 		glTranslated(10.5,4,0.2);
 		glScaled(BOARD_WIDTH,BOARD_HEIGHT,1);
 		glRotated(90.0,1,0,0);
-		materialB->apply();
-		boardB->draw();
+		//materialB->apply();
+		boardB->draw(boardAppearance);
 	glPopMatrix();
 	
 	// ---- END Primitive drawing section

@@ -30,6 +30,7 @@ public:
 	CGFappearance* materialB;
 	CGFappearance* slidesAppearance;
 	CGFappearance* boardAppearance;
+	CGFappearance* windowAppearance;
 
 	~LightingScene();
 };
