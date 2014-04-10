@@ -46,6 +46,7 @@ void Plane::draw()
 
 void Plane::draw(CGFappearance* appearance)
 {
+	glPushMatrix();
 	glEnable(GL_TEXTURE_2D);
 	appearance->apply();
 
@@ -73,15 +74,16 @@ void Plane::draw(CGFappearance* appearance)
 			glEnd();
 		}
 	glPopMatrix();
-
+	glPopMatrix();
 }
 
-void Plane::drawClampSquare(CGFappearance* appearance, float xborder, float yborder)
+void Plane::drawClampSquare(CGFappearance* appearance, float xwidth, float ywidth)
 {
+	glPushMatrix();
 	glEnable(GL_TEXTURE_2D);
+	appearance->apply();
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
-	appearance->apply();
 
 	glPushMatrix();
 		glRotatef(180.0,1,0,0);
@@ -92,30 +94,31 @@ void Plane::drawClampSquare(CGFappearance* appearance, float xborder, float ybor
 		for (int bx = 0; bx<_numDivisions; bx++)
 		{
 			glBegin(GL_TRIANGLE_STRIP);
-				glTexCoord2f((_numDivisions/_numDivisions), ((_numDivisions - float(bx))/_numDivisions));
+				glTexCoord2f(2.375 - (_numDivisions/_numDivisions) * xwidth, 1.5 - ((_numDivisions - float(bx))/_numDivisions) * ywidth);
 				glVertex3f(bx, 0, 0);
 				for (int bz = 0; bz<_numDivisions; bz++)
 				{
-					glTexCoord2f(((_numDivisions - float(bz))/_numDivisions), ((_numDivisions - (float(bx) + 1.0f))/_numDivisions) * yborder);
+					glTexCoord2f(2.375 - ((_numDivisions - float(bz))/_numDivisions) * xwidth, 1.5 - ((_numDivisions - (float(bx) + 1.0f))/_numDivisions) * ywidth);
 					glVertex3f(bx + 1, 0, bz);
-					glTexCoord2f(((_numDivisions - (float(bz) + 1.0f))/_numDivisions), ((_numDivisions - float(bx))/_numDivisions));
+					glTexCoord2f(2.375 - ((_numDivisions - (float(bz) + 1.0f))/_numDivisions) * xwidth, 1.5 - ((_numDivisions - float(bx))/_numDivisions) * ywidth);
 					glVertex3f(bx, 0, bz + 1);
 				}
-				glTexCoord2f(0.0f, ((_numDivisions - (float(bx) + 1.0f))/_numDivisions));
+				glTexCoord2f(2.375 - 0.0f * xwidth, 1.5 - ((_numDivisions - (float(bx) + 1.0f))/_numDivisions) * ywidth);
 				glVertex3d(bx+ 1, 0, _numDivisions);
 
 			glEnd();
 		}
 	glPopMatrix();
-
+	glPopMatrix();
 }
 
 void Plane::drawRepeated(CGFappearance* appearance, float xrepeat, float yrepeat)
 {
+	glPushMatrix();
 	glEnable(GL_TEXTURE_2D);
+	appearance->apply();
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-	appearance->apply();
 
 	glPushMatrix();
 		glRotatef(180.0,1,0,0);
@@ -141,5 +144,5 @@ void Plane::drawRepeated(CGFappearance* appearance, float xrepeat, float yrepeat
 			glEnd();
 		}
 	glPopMatrix();
-
+	glPopMatrix();
 }
