@@ -94,16 +94,16 @@ void Plane::drawClampSquare(CGFappearance* appearance, float xwidth, float ywidt
 		for (int bx = 0; bx<_numDivisions; bx++)
 		{
 			glBegin(GL_TRIANGLE_STRIP);
-				glTexCoord2f(1.5 - (_numDivisions/_numDivisions) * xwidth, -1.5 + ((_numDivisions - float(bx))/_numDivisions) * ywidth);
+				glTexCoord2f(1.5 - (_numDivisions/_numDivisions) * xwidth, ((_numDivisions - float(bx))/_numDivisions) * ywidth);
 				glVertex3f(bx, 0, 0);
 				for (int bz = 0; bz<_numDivisions; bz++)
 				{
-					glTexCoord2f(1.5 - ((_numDivisions - float(bz))/_numDivisions) * xwidth, -1.5 + ((_numDivisions - (float(bx) + 1.0f))/_numDivisions) * ywidth);
+					glTexCoord2f(1.5 - ((_numDivisions - float(bz))/_numDivisions) * xwidth, ((_numDivisions - (float(bx) + 1.0f))/_numDivisions) * ywidth);
 					glVertex3f(bx + 1, 0, bz);
-					glTexCoord2f(1.5 - ((_numDivisions - (float(bz) + 1.0f))/_numDivisions) * xwidth, -1.5 + ((_numDivisions - float(bx))/_numDivisions) * ywidth);
+					glTexCoord2f(1.5 - ((_numDivisions - (float(bz) + 1.0f))/_numDivisions) * xwidth, ((_numDivisions - float(bx))/_numDivisions) * ywidth);
 					glVertex3f(bx, 0, bz + 1);
 				}
-				glTexCoord2f(1.5 - 0.0f * xwidth, -1.5 + ((_numDivisions - (float(bx) + 1.0f))/_numDivisions) * ywidth);
+				glTexCoord2f(1.5 - 0.0f * xwidth, ((_numDivisions - (float(bx) + 1.0f))/_numDivisions) * ywidth);
 				glVertex3d(bx+ 1, 0, _numDivisions);
 
 			glEnd();

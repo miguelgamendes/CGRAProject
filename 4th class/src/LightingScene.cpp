@@ -211,7 +211,7 @@ void LightingScene::display()
 		glRotated(-90.0,0,0,1);
 		glScaled(8,0.2,15);
 		//materialB->apply();
-		wall->drawClampSquare(windowAppearance, 2.0f, 3.75f);
+		wall->drawClampSquare(windowAppearance, 2.0f, 1.0f);
 	glPopMatrix();
 
 	//PlaneWall
