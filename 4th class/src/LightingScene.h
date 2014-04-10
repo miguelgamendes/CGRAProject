@@ -31,6 +31,7 @@ public:
 	CGFappearance* slidesAppearance;
 	CGFappearance* boardAppearance;
 	CGFappearance* windowAppearance;
+	CGFappearance* floorAppearance;
 
 	~LightingScene();
 };

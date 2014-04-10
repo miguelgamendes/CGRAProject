@@ -126,6 +126,8 @@ void LightingScene::init()
 	boardAppearance->setTexture("board.png");
 	windowAppearance = new CGFappearance();
 	windowAppearance->setTexture("window.png");
+	floorAppearance = new CGFappearance();
+	floorAppearance->setTexture("floor.png");
 }
 
 void LightingScene::display() 
@@ -199,8 +201,8 @@ void LightingScene::display()
 	glPushMatrix();
 		glTranslated(7.5,0,7.5);
 		glScaled(15,0.2,15);
-		materialB->apply();
-		wall->draw();
+		//materialB->apply();
+		wall->drawRepeated(floorAppearance, 10.0f, 12.0f);
 	glPopMatrix();
 
 	//LeftWall
@@ -209,9 +211,7 @@ void LightingScene::display()
 		glRotated(-90.0,0,0,1);
 		glScaled(8,0.2,15);
 		//materialB->apply();
-		//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
-		//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
-		wall->draw();
+		wall->drawClampSquare(windowAppearance, 4.0f, 4.0f);
 	glPopMatrix();
 
 	//PlaneWall

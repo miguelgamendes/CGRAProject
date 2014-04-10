@@ -67,7 +67,75 @@ void Plane::draw(CGFappearance* appearance)
 					glTexCoord2f(float(bx)/_numDivisions, (float(bz) + 1.0f)/_numDivisions);
 					glVertex3f(bx, 0, bz + 1);
 				}
-				glTexCoord2f(float(bx)/_numDivisions, 1.0f);
+				glTexCoord2f((float(bx) + 1)/_numDivisions, 1.0f);
+				glVertex3d(bx+ 1, 0, _numDivisions);
+
+			glEnd();
+		}
+	glPopMatrix();
+
+}
+
+void Plane::drawClampSquare(CGFappearance* appearance, float xborder, float yborder)
+{
+	glEnable(GL_TEXTURE_2D);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
+	appearance->apply();
+
+	glPushMatrix();
+		glRotatef(180.0,1,0,0);
+		glTranslatef(-0.5,0.0,-0.5);
+		glScalef(1.0/(double) _numDivisions, 1 ,1.0/(double) _numDivisions);
+		glNormal3f(0,-1,0);
+
+		for (int bx = 0; bx<_numDivisions; bx++)
+		{
+			glBegin(GL_TRIANGLE_STRIP);
+				glTexCoord2f((_numDivisions/_numDivisions), ((_numDivisions - float(bx))/_numDivisions));
+				glVertex3f(bx, 0, 0);
+				for (int bz = 0; bz<_numDivisions; bz++)
+				{
+					glTexCoord2f(((_numDivisions - float(bz))/_numDivisions), ((_numDivisions - (float(bx) + 1.0f))/_numDivisions) * yborder);
+					glVertex3f(bx + 1, 0, bz);
+					glTexCoord2f(((_numDivisions - (float(bz) + 1.0f))/_numDivisions), ((_numDivisions - float(bx))/_numDivisions));
+					glVertex3f(bx, 0, bz + 1);
+				}
+				glTexCoord2f(0.0f, ((_numDivisions - (float(bx) + 1.0f))/_numDivisions));
+				glVertex3d(bx+ 1, 0, _numDivisions);
+
+			glEnd();
+		}
+	glPopMatrix();
+
+}
+
+void Plane::drawRepeated(CGFappearance* appearance, float xrepeat, float yrepeat)
+{
+	glEnable(GL_TEXTURE_2D);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	appearance->apply();
+
+	glPushMatrix();
+		glRotatef(180.0,1,0,0);
+		glTranslatef(-0.5,0.0,-0.5);
+		glScalef(1.0/(double) _numDivisions, 1 ,1.0/(double) _numDivisions);
+		glNormal3f(0,-1,0);
+
+		for (int bx = 0; bx<_numDivisions; bx++)
+		{
+			glBegin(GL_TRIANGLE_STRIP);
+				glTexCoord2f(float(bx)/_numDivisions * xrepeat, 0.0f * yrepeat);
+				glVertex3f(bx, 0, 0);
+				for (int bz = 0; bz<_numDivisions; bz++)
+				{
+					glTexCoord2f((float(bx) + 1.0f)/_numDivisions * xrepeat, float(bz)/_numDivisions * yrepeat);
+					glVertex3f(bx + 1, 0, bz);
+					glTexCoord2f(float(bx)/_numDivisions * xrepeat, (float(bz) + 1.0f)/_numDivisions * yrepeat);
+					glVertex3f(bx, 0, bz + 1);
+				}
+				glTexCoord2f((float(bx) + 1.0f)/_numDivisions * xrepeat, 1.0f * yrepeat);
 				glVertex3d(bx+ 1, 0, _numDivisions);
 
 			glEnd();
