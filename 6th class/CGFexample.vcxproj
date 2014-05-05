@@ -68,21 +68,25 @@
   <ItemGroup>
     <ClCompile Include="src\Chair.cpp" />
     <ClCompile Include="src\ExampleObject.cpp" />
+    <ClCompile Include="src\Face.cpp" />
     <ClCompile Include="src\Floor.cpp" />
     <ClCompile Include="src\LightingScene.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\myCylinder.cpp" />
     <ClCompile Include="src\Plane.cpp" />
+    <ClCompile Include="src\Robot.cpp" />
     <ClCompile Include="src\Table.cpp" />
     <ClCompile Include="src\UnitCube.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Chair.h" />
     <ClInclude Include="src\ExampleObject.h" />
+    <ClInclude Include="src\Face.h" />
     <ClInclude Include="src\Floor.h" />
     <ClInclude Include="src\LightingScene.h" />
     <ClInclude Include="src\myCylinder.h" />
     <ClInclude Include="src\Plane.h" />
+    <ClInclude Include="src\Robot.h" />
     <ClInclude Include="src\Table.h" />
     <ClInclude Include="src\TPscene.h" />
     <ClInclude Include="src\UnitCube.h" />

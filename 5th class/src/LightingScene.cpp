@@ -116,6 +116,7 @@ void LightingScene::init()
 	boardB = new Plane(BOARD_B_DIVISIONS);
 	myCyl = new myCylinder(6,5,false);
 	myCyl2 = new myCylinder(6,5,true);
+	myClock = new Clock();
 	
 	//Declares materials
 	materialA = new CGFappearance(ambA, difA, specA, shininessA);
@@ -184,7 +185,7 @@ void LightingScene::display()
 	//Cylinder WITHOUT smooth
 	glPushMatrix();
 		glScaled(1.0,10.0,1.0);
-		glTranslated(6,0.0,2.0);
+		glTranslated(5,0.0,10.0);
 		glRotated(-90.0, 1.0, 0.0, 0.0);
 		myCyl->draw();
 	glPopMatrix();
@@ -192,7 +193,7 @@ void LightingScene::display()
 	//Cylinder WITH smooth
 	glPushMatrix();
 		glScaled(1.0,10.0,1.0);
-		glTranslated(9,0.0,2.0);
+		glTranslated(10,0.0,10.0);
 		glRotated(-90.0, 1.0, 0.0, 0.0);
 		myCyl->draw();
 	glPopMatrix();
@@ -238,6 +239,11 @@ void LightingScene::display()
 		glRotated(90.0,1,0,0);
 		//materialB->apply();
 		boardB->draw(boardAppearance);
+	glPopMatrix();
+
+	//Clock
+	glPushMatrix();
+		myClock->draw();
 	glPopMatrix();
 	
 	// ---- END Primitive drawing section

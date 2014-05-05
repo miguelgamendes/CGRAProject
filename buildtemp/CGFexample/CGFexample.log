@@ -1,17 +1,25 @@
-﻿Build started 4/10/2014 7:25:57 PM.
-     1>Project "C:\Users\Zephiro309\Desktop\System\FEUP\ano2\semestre2\CGRA\Projecto\4th class\CGFexample.vcxproj" on node 2 (build target(s)).
+﻿Build started 01-05-2014 09:49:50.
+     1>Project "C:\Users\Wake\Documents\CGRA_Git\CGRAProject\4th class\CGFexample.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "..\buildtemp\CGFexample\CGFexample.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          All outputs are up-to-date.
        Link:
-         All outputs are up-to-date.
-         CGFexample.vcxproj -> C:\Users\Zephiro309\Desktop\System\FEUP\ano2\semestre2\CGRA\Projecto\4th class\bin\CGFexample.exe
-       FinalizeBuildStatus:
-         Deleting file "..\buildtemp\CGFexample\CGFexample.unsuccessfulbuild".
-         Touching "..\buildtemp\CGFexample\CGFexample.lastbuildstate".
-     1>Done Building Project "C:\Users\Zephiro309\Desktop\System\FEUP\ano2\semestre2\CGRA\Projecto\4th class\CGFexample.vcxproj" (build target(s)).
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"bin\CGFexample.exe" /NOLOGO glew32.lib CGFlib.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"..\buildtemp\CGFexample\CGFexample.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Wake\Documents\CGRA_Git\CGRAProject\4th class\bin\CGFexample.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"bin\CGFexample.lib" /MACHINE:X86 ..\buildtemp\CGFexample\Chair.obj
+         ..\buildtemp\CGFexample\ExampleObject.obj
+         ..\buildtemp\CGFexample\Floor.obj
+         ..\buildtemp\CGFexample\LightingScene.obj
+         ..\buildtemp\CGFexample\main.obj
+         ..\buildtemp\CGFexample\myCylinder.obj
+         ..\buildtemp\CGFexample\Plane.obj
+         ..\buildtemp\CGFexample\Table.obj
+         ..\buildtemp\CGFexample\UnitCube.obj
+         LINK : bin\CGFexample.exe not found or not built by the last incremental link; performing full link
+     1>LightingScene.obj : error LNK2019: unresolved external symbol "public: __thiscall Clock::Clock(void)" (??0Clock@@QAE@XZ) referenced in function "public: virtual void __thiscall LightingScene::init(void)" (?init@LightingScene@@UAEXXZ)
+     1>LightingScene.obj : error LNK2019: unresolved external symbol "public: void __thiscall Clock::draw(void)" (?draw@Clock@@QAEXXZ) referenced in function "public: virtual void __thiscall LightingScene::display(void)" (?display@LightingScene@@UAEXXZ)
+     1>bin\CGFexample.exe : fatal error LNK1120: 2 unresolved externals
+     1>Done Building Project "C:\Users\Wake\Documents\CGRA_Git\CGRAProject\4th class\CGFexample.vcxproj" (build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:00.09
+Time Elapsed 00:00:06.25

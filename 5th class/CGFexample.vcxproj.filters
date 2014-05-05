@@ -42,6 +42,12 @@
     <ClCompile Include="src\myCylinder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Clock.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ClockHand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ExampleObject.h">
@@ -69,6 +75,12 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="src\myCylinder.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Clock.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ClockHand.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

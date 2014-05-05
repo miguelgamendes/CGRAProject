@@ -67,6 +67,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Chair.cpp" />
+    <ClCompile Include="src\Clock.cpp" />
+    <ClCompile Include="src\ClockHand.cpp" />
     <ClCompile Include="src\ExampleObject.cpp" />
     <ClCompile Include="src\Floor.cpp" />
     <ClCompile Include="src\LightingScene.cpp" />
@@ -78,6 +80,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Chair.h" />
+    <ClInclude Include="src\Clock.h" />
+    <ClInclude Include="src\ClockHand.h" />
     <ClInclude Include="src\ExampleObject.h" />
     <ClInclude Include="src\Floor.h" />
     <ClInclude Include="src\LightingScene.h" />
