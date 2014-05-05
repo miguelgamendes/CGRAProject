@@ -48,7 +48,7 @@ void LightingScene::init()
 	// Enables lighting computations
 	glEnable(GL_LIGHTING);
 
-	// Enables the Flat Shading
+	// Enables smooth Shading
 	glShadeModel(GL_SMOOTH);
 
 	// Sets up some lighting parameters

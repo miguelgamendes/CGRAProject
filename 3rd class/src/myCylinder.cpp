@@ -22,7 +22,8 @@ void myCylinder::draw(){
 
 		for(int i = 0; i < slices; i++)
 		{
-			glNormal3f(cos(delta * i), sin(delta * i), 1); //vai ser desenhado sobre o eixo dos z
+			//glNormal3f(cos(delta * i), sin(delta * i), 1); //vai ser desenhado sobre o eixo dos z
+			glNormal3f(0.0f, 0.0f, 1.0f);
 			glVertex3f(cos(delta * i), sin(delta * i), 1);
 		}
 	glEnd();
@@ -33,7 +34,8 @@ void myCylinder::draw(){
 	glBegin(GL_POLYGON);
 		for(int i = 0; i < slices; i++)
 		{
-			glNormal3f(cos(delta * -i), sin(delta * -i), 0); //vai ser desenhado sobre o eixo dos z
+			//glNormal3f(cos(delta * -i), sin(delta * -i), 0); //vai ser desenhado sobre o eixo dos z
+			glNormal3f(0.0f, 0.0f, -1.0f);
 			glVertex3f(cos(delta * -i), sin(delta * -i), 0);
 		}
 
