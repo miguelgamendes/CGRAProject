@@ -1,43 +1,25 @@
-<<<<<<< HEAD
-﻿Build started 01-05-2014 09:49:50.
-     1>Project "C:\Users\Wake\Documents\CGRA_Git\CGRAProject\4th class\CGFexample.vcxproj" on node 2 (build target(s)).
-=======
-﻿Build started 5/1/2014 9:54:04 AM.
-     1>Project "C:\Users\Zephiro309\Desktop\System\FEUP\ano2\semestre2\CGRA\Projecto\5th class\CGFexample.vcxproj" on node 2 (build target(s)).
->>>>>>> 6ef6ab20ea3454f0304536bbccb1a775bced29bd
+﻿Build started 5/16/2014 12:02:25 PM.
+     1>Project "C:\Users\Zephiro309\Desktop\System\FEUP\ano2\semestre2\CGRA\Projecto\6th class\CGFexample.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Creating "..\buildtemp\CGFexample\CGFexample.unsuccessfulbuild" because "AlwaysCreate" was specified.
+         Touching "..\buildtemp\CGFexample\CGFexample.unsuccessfulbuild".
        ClCompile:
-         All outputs are up-to-date.
-       Link:
-<<<<<<< HEAD
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"bin\CGFexample.exe" /NOLOGO glew32.lib CGFlib.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"..\buildtemp\CGFexample\CGFexample.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Wake\Documents\CGRA_Git\CGRAProject\4th class\bin\CGFexample.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"bin\CGFexample.lib" /MACHINE:X86 ..\buildtemp\CGFexample\Chair.obj
-         ..\buildtemp\CGFexample\ExampleObject.obj
-         ..\buildtemp\CGFexample\Floor.obj
-         ..\buildtemp\CGFexample\LightingScene.obj
-         ..\buildtemp\CGFexample\main.obj
-         ..\buildtemp\CGFexample\myCylinder.obj
-         ..\buildtemp\CGFexample\Plane.obj
-         ..\buildtemp\CGFexample\Table.obj
-         ..\buildtemp\CGFexample\UnitCube.obj
-         LINK : bin\CGFexample.exe not found or not built by the last incremental link; performing full link
-     1>LightingScene.obj : error LNK2019: unresolved external symbol "public: __thiscall Clock::Clock(void)" (??0Clock@@QAE@XZ) referenced in function "public: virtual void __thiscall LightingScene::init(void)" (?init@LightingScene@@UAEXXZ)
-     1>LightingScene.obj : error LNK2019: unresolved external symbol "public: void __thiscall Clock::draw(void)" (?draw@Clock@@QAEXXZ) referenced in function "public: virtual void __thiscall LightingScene::display(void)" (?display@LightingScene@@UAEXXZ)
-     1>bin\CGFexample.exe : fatal error LNK1120: 2 unresolved externals
-     1>Done Building Project "C:\Users\Wake\Documents\CGRA_Git\CGRAProject\4th class\CGFexample.vcxproj" (build target(s)) -- FAILED.
-=======
-         All outputs are up-to-date.
-         CGFexample.vcxproj -> C:\Users\Zephiro309\Desktop\System\FEUP\ano2\semestre2\CGRA\Projecto\5th class\bin\CGFexample.exe
-       FinalizeBuildStatus:
-         Deleting file "..\buildtemp\CGFexample\CGFexample.unsuccessfulbuild".
-         Touching "..\buildtemp\CGFexample\CGFexample.lastbuildstate".
-     1>Done Building Project "C:\Users\Zephiro309\Desktop\System\FEUP\ano2\semestre2\CGRA\Projecto\5th class\CGFexample.vcxproj" (build target(s)).
->>>>>>> 6ef6ab20ea3454f0304536bbccb1a775bced29bd
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"..\buildtemp\CGFexample\\" /Fd"..\buildtemp\CGFexample\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt src\Face.cpp src\Robot.cpp
+         Robot.cpp
+     1>c:\users\zephiro309\desktop\system\feup\ano2\semestre2\cgra\projecto\6th class\src\face.h(7): error C2087: 'vertex' : missing subscript
+     1>c:\users\zephiro309\desktop\system\feup\ano2\semestre2\cgra\projecto\6th class\src\face.h(7): warning C4200: nonstandard extension used : zero-sized array in struct/union
+                 Cannot generate copy-ctor or copy-assignment operator when UDT contains a zero-sized array
+     1>c:\users\zephiro309\desktop\system\feup\ano2\semestre2\cgra\projecto\6th class\src\robot.cpp(4): error C2374: 'SIXTH' : redefinition; multiple initialization
+                 c:\users\zephiro309\desktop\system\feup\ano2\semestre2\cgra\projecto\6th class\src\face.cpp(6) : see declaration of 'SIXTH'
+     1>c:\users\zephiro309\desktop\system\feup\ano2\semestre2\cgra\projecto\6th class\src\robot.cpp(6): error C2512: 'Face' : no appropriate default constructor available
+     1>c:\users\zephiro309\desktop\system\feup\ano2\semestre2\cgra\projecto\6th class\src\robot.cpp(7): error C2064: term does not evaluate to a function taking 1 arguments
+         Face.cpp
+     1>c:\users\zephiro309\desktop\system\feup\ano2\semestre2\cgra\projecto\6th class\src\face.h(4): error C2504: 'CGFobject' : base class undefined
+     1>c:\users\zephiro309\desktop\system\feup\ano2\semestre2\cgra\projecto\6th class\src\face.h(7): error C2087: 'vertex' : missing subscript
+     1>c:\users\zephiro309\desktop\system\feup\ano2\semestre2\cgra\projecto\6th class\src\face.h(7): warning C4200: nonstandard extension used : zero-sized array in struct/union
+                 Cannot generate copy-ctor or copy-assignment operator when UDT contains a zero-sized array
+         Generating Code...
+     1>Done Building Project "C:\Users\Zephiro309\Desktop\System\FEUP\ano2\semestre2\CGRA\Projecto\6th class\CGFexample.vcxproj" (build target(s)) -- FAILED.
 
 Build FAILED.
 
-<<<<<<< HEAD
-Time Elapsed 00:00:06.25
-=======
-Time Elapsed 00:00:00.07
->>>>>>> 6ef6ab20ea3454f0304536bbccb1a775bced29bd
+Time Elapsed 00:00:00.33

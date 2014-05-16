@@ -2,6 +2,7 @@
 #define ROBOT_H
 
 #include "CGFobject.h"
+#include "Face.h"
 
 class Robot: public CGFobject {
 private:
@@ -11,6 +12,6 @@ public:
 	Face face;
 	Robot(int stacks);
 	void draw();
-}
+};
 
 #endif

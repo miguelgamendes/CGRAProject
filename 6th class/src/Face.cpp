@@ -3,27 +3,36 @@
 
 #define M_PI 3.1415926535897932384626433832795
 
-float SIXTH = 1/6;
+float THIRD = 1/3;
+float DELTALPHA = 90/4;
 
 Face::Face(int stacks) {
-	bot[0].x = -0.5;
-	bot[1].x = -SIXTH;
-	bot[2].x = SIXTH;
-	bot[3].x = 0.5;
+	this->stacks = stacks;
 
-	for(int i = 0; i < 4; i++) {
-		bot[i].y = 0;
-		bot[i].z = 0.5;
+	//bottom
+	for(unsigned int i = 0; i < 4; i++) {
+		vertex[0][i].x = -0.5f + i * THIRD;
+		vertex[0][i].y = 0.0f;
+		vertex[0][i].z = 0.5f;
 	}
 
-	int delta = 2*M_PI/3;
-	for(int i = 0; i < 4; i++) {
-		top[i].x = cos(M_PI/4 + i*delta);
-		top[i].y = 1;
-		top[i].z = sin(M_PI/4 + i*delta);
+	//top
+	for(unsigned int i = 0; i < 4; i++) {
+		vertex[stacks - 1][i].x = 0.25 * cos(-135.0f + DELTALPHA*i);
+		vertex[stacks - 1][i].y = 1;
+		vertex[stacks - 1][i].z = 0.25 * sin(-135.0f + DELTALPHA*i);
+	}
+
+	//interpolation
+	for(unsigned int i = 1; i < stacks - 2; i++) {
+		for(unsigned int j = 0; j < 4; j++) {
+			vertex[i][j].x = vertex[0][j].x * (stacks - i)/stacks + vertex[stacks - 1][j].x * i/stacks;
+			vertex[i][j].y = i / stacks;
+			vertex[i][j].z = vertex[0][j].z * (stacks - i)/stacks + vertex[stacks - 1][j].z * i/stacks;
+		}
 	}
 };
 
 void Face::draw() {
-	vertex tmp_bot1, tmp_bot2;
+
 };

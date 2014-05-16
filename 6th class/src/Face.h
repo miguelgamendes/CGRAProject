@@ -4,11 +4,10 @@
 class Face: public CGFobject {
 private:
 	int stacks;
-	struct vertex{ float x; float y; float z;};
-	vertex bot[4];
-	vertex top[4];
+	struct Vector3f{ float x; float y; float z;};
+	Vector3f vertex[stacks][4];
 public:
 	Face(int stacks);
 	void draw();
-}
+};
 #endif
