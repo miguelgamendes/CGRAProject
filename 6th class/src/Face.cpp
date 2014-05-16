@@ -29,10 +29,19 @@ Face::Face(int stacks) {
 			vertex[i][j].x = vertex[0][j].x * (stacks - i)/stacks + vertex[stacks - 1][j].x * i/stacks;
 			vertex[i][j].y = i / stacks;
 			vertex[i][j].z = vertex[0][j].z * (stacks - i)/stacks + vertex[stacks - 1][j].z * i/stacks;
-		}
+		}	
 	}
 };
 
 void Face::draw() {
-
+	glBegin(GL_POLYGON);
+		for(unsigned int i = 0; i < stacks - 2; i++) {
+			for(unsigned int j = 0; j < 3; j++) {
+				glVertex3f(vertex[i][j].x, vertex[i][j].y, vertex[i][j].z);
+				glVertex3f(vertex[i][j + 1].x, vertex[i][j + 1].y, vertex[i][j + 1].z);
+				glVertex3f(vertex[i + 1][j + 1].x, vertex[i + 1][j + 1].y, vertex[i + 1][j + 1].z);
+				glVertex3f(vertex[i + 1][j].x, vertex[i + 1][j].y, vertex[i + 1][j].z);
+			}
+		}
+	glEnd();
 };

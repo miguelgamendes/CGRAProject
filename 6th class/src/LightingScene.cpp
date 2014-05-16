@@ -5,6 +5,7 @@
 #include "Plane.h"
 #include "Chair.h"
 #include "myCylinder.h"
+#include "Face.h"
 
 #include <math.h>
 
@@ -253,11 +254,21 @@ LightingScene::~LightingScene()
 {
 	delete(light0);
 	delete(light1);
+	delete(light2);
+	delete(light3);
 
 	delete(table);
 	delete(wall);
+	delete(chair);
 	delete(boardA);
 	delete(boardB);
+	delete(myCyl);
+	delete(myCyl2);
 	delete(materialA);
 	delete(materialB);
+
+	delete(slidesAppearance);
+	delete(boardAppearance);
+	delete(windowAppearance);
+	delete(floorAppearance);
 }

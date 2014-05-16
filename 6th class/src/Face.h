@@ -1,6 +1,8 @@
 #ifndef FACE_H
 #define FACE_H
 
+#include "CGFObject.h"
+
 class Face: public CGFobject {
 private:
 	int stacks;
