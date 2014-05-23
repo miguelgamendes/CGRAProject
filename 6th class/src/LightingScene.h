@@ -7,6 +7,7 @@
 #include "Plane.h"
 #include "Chair.h"
 #include "myCylinder.h"
+#include "Robot.h"
 
 class LightingScene : public CGFscene
 {
@@ -32,6 +33,7 @@ public:
 	CGFappearance* boardAppearance;
 	CGFappearance* windowAppearance;
 	CGFappearance* floorAppearance;
+	Robot* robot;
 
 	~LightingScene();
 };

@@ -1,25 +1,46 @@
-﻿Build started 5/16/2014 12:02:25 PM.
+﻿Build started 5/23/2014 1:01:27 PM.
      1>Project "C:\Users\Zephiro309\Desktop\System\FEUP\ano2\semestre2\CGRA\Projecto\6th class\CGFexample.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Touching "..\buildtemp\CGFexample\CGFexample.unsuccessfulbuild".
+         Creating "..\buildtemp\CGFexample\CGFexample.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"..\buildtemp\CGFexample\\" /Fd"..\buildtemp\CGFexample\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt src\Face.cpp src\Robot.cpp
-         Robot.cpp
-     1>c:\users\zephiro309\desktop\system\feup\ano2\semestre2\cgra\projecto\6th class\src\face.h(7): error C2087: 'vertex' : missing subscript
-     1>c:\users\zephiro309\desktop\system\feup\ano2\semestre2\cgra\projecto\6th class\src\face.h(7): warning C4200: nonstandard extension used : zero-sized array in struct/union
-                 Cannot generate copy-ctor or copy-assignment operator when UDT contains a zero-sized array
-     1>c:\users\zephiro309\desktop\system\feup\ano2\semestre2\cgra\projecto\6th class\src\robot.cpp(4): error C2374: 'SIXTH' : redefinition; multiple initialization
-                 c:\users\zephiro309\desktop\system\feup\ano2\semestre2\cgra\projecto\6th class\src\face.cpp(6) : see declaration of 'SIXTH'
-     1>c:\users\zephiro309\desktop\system\feup\ano2\semestre2\cgra\projecto\6th class\src\robot.cpp(6): error C2512: 'Face' : no appropriate default constructor available
-     1>c:\users\zephiro309\desktop\system\feup\ano2\semestre2\cgra\projecto\6th class\src\robot.cpp(7): error C2064: term does not evaluate to a function taking 1 arguments
          Face.cpp
-     1>c:\users\zephiro309\desktop\system\feup\ano2\semestre2\cgra\projecto\6th class\src\face.h(4): error C2504: 'CGFobject' : base class undefined
-     1>c:\users\zephiro309\desktop\system\feup\ano2\semestre2\cgra\projecto\6th class\src\face.h(7): error C2087: 'vertex' : missing subscript
-     1>c:\users\zephiro309\desktop\system\feup\ano2\semestre2\cgra\projecto\6th class\src\face.h(7): warning C4200: nonstandard extension used : zero-sized array in struct/union
-                 Cannot generate copy-ctor or copy-assignment operator when UDT contains a zero-sized array
+     1>c:\users\zephiro309\desktop\system\feup\ano2\semestre2\cgra\projecto\6th class\src\face.cpp(56): warning C4018: '<' : signed/unsigned mismatch
          Generating Code...
-     1>Done Building Project "C:\Users\Zephiro309\Desktop\System\FEUP\ano2\semestre2\CGRA\Projecto\6th class\CGFexample.vcxproj" (build target(s)) -- FAILED.
+         Skipping... (no relevant changes detected)
+         Robot.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"bin\CGFexample.exe" /NOLOGO glew32.lib CGFlib.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"..\buildtemp\CGFexample\CGFexample.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Zephiro309\Desktop\System\FEUP\ano2\semestre2\CGRA\Projecto\6th class\bin\CGFexample.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"bin\CGFexample.lib" /MACHINE:X86 ..\buildtemp\CGFexample\Chair.obj
+         ..\buildtemp\CGFexample\ExampleObject.obj
+         ..\buildtemp\CGFexample\Face.obj
+         ..\buildtemp\CGFexample\Floor.obj
+         ..\buildtemp\CGFexample\LightingScene.obj
+         ..\buildtemp\CGFexample\main.obj
+         ..\buildtemp\CGFexample\myCylinder.obj
+         ..\buildtemp\CGFexample\Plane.obj
+         ..\buildtemp\CGFexample\Robot.obj
+         ..\buildtemp\CGFexample\Table.obj
+         ..\buildtemp\CGFexample\UnitCube.obj
+         LINK : bin\CGFexample.exe not found or not built by the last incremental link; performing full link
+     1>CGFlib.lib(CGFappearance.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'CGFlib.lib(CGFappearance.obj)' or at 'C:\Users\Zephiro309\Desktop\System\FEUP\ano2\semestre2\CGRA\Projecto\6th class\bin\vc100.pdb'; linking object as if no debug info
+     1>CGFlib.lib(CGFapplication.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'CGFlib.lib(CGFapplication.obj)' or at 'C:\Users\Zephiro309\Desktop\System\FEUP\ano2\semestre2\CGRA\Projecto\6th class\bin\vc100.pdb'; linking object as if no debug info
+     1>CGFlib.lib(CGFaxis.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'CGFlib.lib(CGFaxis.obj)' or at 'C:\Users\Zephiro309\Desktop\System\FEUP\ano2\semestre2\CGRA\Projecto\6th class\bin\vc100.pdb'; linking object as if no debug info
+     1>CGFlib.lib(CGFcamera.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'CGFlib.lib(CGFcamera.obj)' or at 'C:\Users\Zephiro309\Desktop\System\FEUP\ano2\semestre2\CGRA\Projecto\6th class\bin\vc100.pdb'; linking object as if no debug info
+     1>CGFlib.lib(CGFinterface.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'CGFlib.lib(CGFinterface.obj)' or at 'C:\Users\Zephiro309\Desktop\System\FEUP\ano2\semestre2\CGRA\Projecto\6th class\bin\vc100.pdb'; linking object as if no debug info
+     1>CGFlib.lib(CGFlight.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'CGFlib.lib(CGFlight.obj)' or at 'C:\Users\Zephiro309\Desktop\System\FEUP\ano2\semestre2\CGRA\Projecto\6th class\bin\vc100.pdb'; linking object as if no debug info
+     1>CGFlib.lib(CGFobject.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'CGFlib.lib(CGFobject.obj)' or at 'C:\Users\Zephiro309\Desktop\System\FEUP\ano2\semestre2\CGRA\Projecto\6th class\bin\vc100.pdb'; linking object as if no debug info
+     1>CGFlib.lib(CGFscene.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'CGFlib.lib(CGFscene.obj)' or at 'C:\Users\Zephiro309\Desktop\System\FEUP\ano2\semestre2\CGRA\Projecto\6th class\bin\vc100.pdb'; linking object as if no debug info
+     1>CGFlib.lib(CGFtexture.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'CGFlib.lib(CGFtexture.obj)' or at 'C:\Users\Zephiro309\Desktop\System\FEUP\ano2\semestre2\CGRA\Projecto\6th class\bin\vc100.pdb'; linking object as if no debug info
+     1>CGFlib.lib(imagetools.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'CGFlib.lib(imagetools.obj)' or at 'C:\Users\Zephiro309\Desktop\System\FEUP\ano2\semestre2\CGRA\Projecto\6th class\bin\vc100.pdb'; linking object as if no debug info
+     1>CGFlib.lib(stb_image.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'CGFlib.lib(stb_image.obj)' or at 'C:\Users\Zephiro309\Desktop\System\FEUP\ano2\semestre2\CGRA\Projecto\6th class\bin\vc100.pdb'; linking object as if no debug info
+         CGFexample.vcxproj -> C:\Users\Zephiro309\Desktop\System\FEUP\ano2\semestre2\CGRA\Projecto\6th class\bin\CGFexample.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"bin\CGFexample.exe;#1" /manifest ..\buildtemp\CGFexample\CGFexample.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "..\buildtemp\CGFexample\CGFexample.unsuccessfulbuild".
+         Touching "..\buildtemp\CGFexample\CGFexample.lastbuildstate".
+     1>Done Building Project "C:\Users\Zephiro309\Desktop\System\FEUP\ano2\semestre2\CGRA\Projecto\6th class\CGFexample.vcxproj" (build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:00.33
+Time Elapsed 00:00:01.08

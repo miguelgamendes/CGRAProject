@@ -117,6 +117,7 @@ void LightingScene::init()
 	boardB = new Plane(BOARD_B_DIVISIONS);
 	myCyl = new myCylinder(6,5,false);
 	myCyl2 = new myCylinder(6,5,true);
+	robot = new Robot();
 	
 	//Declares materials
 	materialA = new CGFappearance(ambA, difA, specA, shininessA);
@@ -157,7 +158,7 @@ void LightingScene::display()
 	// ---- END Background, camera and axis setup
 
 	// ---- BEGIN Primitive drawing section
-
+	/*
 	//First Table
 	glPushMatrix();
 		glTranslated(5,0,8);
@@ -196,7 +197,7 @@ void LightingScene::display()
 		glTranslated(9,0.0,2.0);
 		glRotated(-90.0, 1.0, 0.0, 0.0);
 		myCyl->draw();
-	glPopMatrix();
+	glPopMatrix();*/
 
 	//Floor
 	glPushMatrix();
@@ -205,7 +206,7 @@ void LightingScene::display()
 		//materialB->apply();
 		wall->drawRepeated(floorAppearance, 10.0f, 12.0f);
 	glPopMatrix();
-
+	/*
 	//LeftWall
 	glPushMatrix();
 		glTranslated(0,4,7.5);
@@ -239,6 +240,13 @@ void LightingScene::display()
 		glRotated(90.0,1,0,0);
 		//materialB->apply();
 		boardB->draw(boardAppearance);
+	glPopMatrix();*/
+
+	//Robot
+	glPushMatrix();
+		glTranslated(7,5,2);
+		glScaled(2.0f, 2.0f, 2.0f);
+		robot->draw();
 	glPopMatrix();
 	
 	// ---- END Primitive drawing section

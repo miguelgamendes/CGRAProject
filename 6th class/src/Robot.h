@@ -10,7 +10,7 @@ private:
 
 public:
 	Face face;
-	Robot(int stacks);
+	Robot();
 	void draw();
 };
 
