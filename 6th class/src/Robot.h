@@ -7,6 +7,7 @@
 class Robot: public CGFobject {
 private:
 	int stacks;
+	CGFappearance * robotAppearance;
 
 public:
 	Face face;

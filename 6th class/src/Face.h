@@ -2,6 +2,7 @@
 #define FACE_H
 
 #include "CGFObject.h"
+#include "CGFAppearance.h"
 
 class Face: public CGFobject {
 private:
@@ -12,6 +13,7 @@ private:
 public:
 	Face();
 	void draw();
+	void drawTextured(CGFappearance * appearance, char direction);
 };
 
 #endif

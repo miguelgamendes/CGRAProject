@@ -49,7 +49,7 @@ Face::Face() {
 			std::cout << i << " " << j << " " << vertex[i][j].x << " " << vertex[i][j].y << " " << vertex[i][j].z << std::endl;
 		}
 	}*/
-};
+}
 
 void Face::draw() {
 	glBegin(GL_QUADS);
@@ -66,4 +66,95 @@ void Face::draw() {
 			}
 		}
 	glEnd();
-};
+}
+
+void Face::drawTextured(CGFappearance * appearance, char direction) {
+	glPushMatrix();
+	glEnable(GL_TEXTURE_2D);
+	appearance->apply();
+
+	switch(direction) {
+		case 'f': //front
+			glBegin(GL_QUADS);
+				for(unsigned int i = 0; i < stacks - 1; i++) {
+					for(unsigned int j = 0; j < 3; j++) {
+						glNormal3f(normal[i][j].x, normal[i][j].y, normal[i][j].z);
+						glTexCoord2f(j / 3.0f + (0.5f - j / 3.0f) * (float)i / stacks, (i * 0.5f) / stacks);
+						glVertex3f(vertex[i][j].x, vertex[i][j].y, vertex[i][j].z);
+						glNormal3f(normal[i][j + 1].x, normal[i][j + 1].y, normal[i][j + 1].z);
+						glTexCoord2f((j + 1) / 3.0f + (0.5f - (j + 1) / 3.0f) * (float)i / stacks, (i * 0.5f) / stacks);
+						glVertex3f(vertex[i][j + 1].x, vertex[i][j + 1].y, vertex[i][j + 1].z);
+						glNormal3f(normal[i + 1][j + 1].x, normal[i + 1][j + 1].y, normal[i + 1][j + 1].z);
+						glTexCoord2f((j + 1) / 3.0f + (0.5f - (j + 1) / 3.0f) * (float)(i + 1) / stacks, ((i + 1) * 0.5f) / stacks);
+						glVertex3f(vertex[i + 1][j + 1].x, vertex[i + 1][j + 1].y, vertex[i + 1][j + 1].z);
+						glNormal3f(normal[i + 1][j].x, normal[i + 1][j].y, normal[i + 1][j].z);
+						glTexCoord2f(j / 3.0f + (0.5f - j / 3.0f) * (float)(i + 1) / stacks, ((i + 1) * 0.5f) / stacks);
+						glVertex3f(vertex[i + 1][j].x, vertex[i + 1][j].y, vertex[i + 1][j].z);
+					}
+				}
+			glEnd();
+			break;
+		case 'l': //left
+			glBegin(GL_QUADS);
+				for(unsigned int i = 0; i < stacks - 1; i++) {
+					for(unsigned int j = 0; j < 3; j++) {
+						glNormal3f(normal[i][j].x, normal[i][j].y, normal[i][j].z);
+						glTexCoord2f(1.0f - (0.5f * (float)i / stacks), j / 3.0f + (0.5f - j / 3.0f) * (float)i / stacks);
+						glVertex3f(vertex[i][j].x, vertex[i][j].y, vertex[i][j].z);
+						glNormal3f(normal[i][j + 1].x, normal[i][j + 1].y, normal[i][j + 1].z);
+						glTexCoord2f(1.0f - (0.5f * (float)i / stacks), (j + 1) / 3.0f + (0.5f - (j + 1) / 3.0f) * (float)i / stacks);
+						glVertex3f(vertex[i][j + 1].x, vertex[i][j + 1].y, vertex[i][j + 1].z);
+						glNormal3f(normal[i + 1][j + 1].x, normal[i + 1][j + 1].y, normal[i + 1][j + 1].z);
+						glTexCoord2f(1.0f - (0.5f * (float)(i + 1) / stacks), (j + 1) / 3.0f + (0.5f - (j + 1) / 3.0f) * (float)(i + 1) / stacks);
+						glVertex3f(vertex[i + 1][j + 1].x, vertex[i + 1][j + 1].y, vertex[i + 1][j + 1].z);
+						glNormal3f(normal[i + 1][j].x, normal[i + 1][j].y, normal[i + 1][j].z);
+						glTexCoord2f(1.0f - (0.5f * (float)(i + 1) / stacks), j / 3.0f + (0.5f - j / 3.0f) * (float)(i + 1) / stacks);
+						glVertex3f(vertex[i + 1][j].x, vertex[i + 1][j].y, vertex[i + 1][j].z);
+					}
+				}
+			glEnd();
+			break;
+		case 'r': //right
+			glBegin(GL_QUADS);
+				for(unsigned int i = 0; i < stacks - 1; i++) {
+					for(unsigned int j = 0; j < 3; j++) {
+						glNormal3f(normal[i][j].x, normal[i][j].y, normal[i][j].z);
+						glTexCoord2f((float)i / stacks * 0.5f, 1 - j / 3.0f + (0.5f - (1 - j / 3.0f)) * (float)i / stacks);
+						glVertex3f(vertex[i][j].x, vertex[i][j].y, vertex[i][j].z);
+						glNormal3f(normal[i][j + 1].x, normal[i][j + 1].y, normal[i][j + 1].z);
+						glTexCoord2f((float)i / stacks * 0.5f, 1 - (j + 1) / 3.0f + (0.5f - (1 - (j + 1) / 3.0f)) * (float)i / stacks);
+						glVertex3f(vertex[i][j + 1].x, vertex[i][j + 1].y, vertex[i][j + 1].z);
+						glNormal3f(normal[i + 1][j + 1].x, normal[i + 1][j + 1].y, normal[i + 1][j + 1].z);
+						glTexCoord2f((float)(i + 1) / stacks * 0.5f, 1 - (j + 1) / 3.0f + (0.5f - (1 - (j + 1) / 3.0f)) * (float)(i + 1) / stacks);
+						glVertex3f(vertex[i + 1][j + 1].x, vertex[i + 1][j + 1].y, vertex[i + 1][j + 1].z);
+						glNormal3f(normal[i + 1][j].x, normal[i + 1][j].y, normal[i + 1][j].z);
+						glTexCoord2f((float)(i + 1) / stacks * 0.5f, 1 - j / 3.0f + (0.5f - (1 - j / 3.0f)) * (float)(i + 1) / stacks);
+						glVertex3f(vertex[i + 1][j].x, vertex[i + 1][j].y, vertex[i + 1][j].z);
+					}
+				}
+			glEnd();
+			break;
+		case 'b': //back
+			glBegin(GL_QUADS);
+				for(unsigned int i = 0; i < stacks - 1; i++) {
+					for(unsigned int j = 0; j < 3; j++) {
+						glNormal3f(normal[i][j].x, normal[i][j].y, normal[i][j].z);
+						glTexCoord2f(1 - j / 3.0f + (0.5f - (1 - j / 3.0f)) * (float)i / stacks, 1.0f - (i * 0.5f) / stacks);
+						glVertex3f(vertex[i][j].x, vertex[i][j].y, vertex[i][j].z);
+						glNormal3f(normal[i][j + 1].x, normal[i][j + 1].y, normal[i][j + 1].z);
+						glTexCoord2f(1 - (j + 1) / 3.0f + (0.5f - (1 - (j + 1) / 3.0f)) * (float)i / stacks, 1.0f - (i * 0.5f) / stacks);
+						glVertex3f(vertex[i][j + 1].x, vertex[i][j + 1].y, vertex[i][j + 1].z);
+						glNormal3f(normal[i + 1][j + 1].x, normal[i + 1][j + 1].y, normal[i + 1][j + 1].z);
+						glTexCoord2f(1 - (j + 1) / 3.0f + (0.5f - (1 - (j + 1) / 3.0f)) * (float)(i + 1) / stacks, 1.0f - ((i + 1) * 0.5f) / stacks);
+						glVertex3f(vertex[i + 1][j + 1].x, vertex[i + 1][j + 1].y, vertex[i + 1][j + 1].z);
+						glNormal3f(normal[i + 1][j].x, normal[i + 1][j].y, normal[i + 1][j].z);
+						glTexCoord2f(1 - j / 3.0f + (0.5f - (1 - j / 3.0f)) * (float)(i + 1) / stacks, 1.0f - ((i + 1) * 0.5f) / stacks);
+						glVertex3f(vertex[i + 1][j].x, vertex[i + 1][j].y, vertex[i + 1][j].z);
+					}
+				}
+			glEnd();
+			break;
+	};
+
+	glPopMatrix();
+}

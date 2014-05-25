@@ -76,6 +76,7 @@
     <ClCompile Include="src\Plane.cpp" />
     <ClCompile Include="src\Robot.cpp" />
     <ClCompile Include="src\Table.cpp" />
+    <ClCompile Include="src\TPinterface.cpp" />
     <ClCompile Include="src\UnitCube.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -88,6 +89,7 @@
     <ClInclude Include="src\Plane.h" />
     <ClInclude Include="src\Robot.h" />
     <ClInclude Include="src\Table.h" />
+    <ClInclude Include="src\TPinterface.h" />
     <ClInclude Include="src\TPscene.h" />
     <ClInclude Include="src\UnitCube.h" />
   </ItemGroup>
