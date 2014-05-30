@@ -21,48 +21,54 @@
     <ClInclude Include="src\TPscene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\ei11105\Downloads\CanvasExampleFiles\Canvascamera.h">
+    <ClInclude Include="src\Canvascamera.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\ei11105\Downloads\CanvasExampleFiles\CanvasInterface.h">
+    <ClInclude Include="src\CanvasInterface.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\ei11105\Downloads\CanvasExampleFiles\CanvasScene.h">
+    <ClInclude Include="src\CanvasScene.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\ei11105\Downloads\CanvasExampleFiles\CanvasTool.h">
+    <ClInclude Include="src\CanvasTool.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\ei11105\Downloads\CanvasExampleFiles\CGFcanvas.h">
+    <ClInclude Include="src\CGFcanvas.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\ei11105\Downloads\CanvasExampleFiles\LineTool.h">
+    <ClInclude Include="src\LineTool.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\ei11105\Downloads\CanvasExampleFiles\PointTool.h">
+    <ClInclude Include="src\PointTool.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RectTool.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C:\Users\ei11105\Downloads\CanvasExampleFiles\Canvascamera.cpp">
+    <ClCompile Include="src\Canvascamera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\ei11105\Downloads\CanvasExampleFiles\CanvasInterface.cpp">
+    <ClCompile Include="src\CanvasInterface.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\ei11105\Downloads\CanvasExampleFiles\CanvasScene.cpp">
+    <ClCompile Include="src\CanvasScene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\ei11105\Downloads\CanvasExampleFiles\CGFcanvas.cpp">
+    <ClCompile Include="src\CGFcanvas.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\ei11105\Downloads\CanvasExampleFiles\LineTool.cpp">
+    <ClCompile Include="src\LineTool.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\ei11105\Downloads\CanvasExampleFiles\main.cpp">
+    <ClCompile Include="src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\ei11105\Downloads\CanvasExampleFiles\PointTool.cpp">
+    <ClCompile Include="src\PointTool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RectTool.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

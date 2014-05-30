@@ -66,24 +66,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="C:\Users\ei11105\Downloads\CanvasExampleFiles\Canvascamera.h" />
-    <ClInclude Include="C:\Users\ei11105\Downloads\CanvasExampleFiles\CanvasInterface.h" />
-    <ClInclude Include="C:\Users\ei11105\Downloads\CanvasExampleFiles\CanvasScene.h" />
-    <ClInclude Include="C:\Users\ei11105\Downloads\CanvasExampleFiles\CanvasTool.h" />
-    <ClInclude Include="C:\Users\ei11105\Downloads\CanvasExampleFiles\CGFcanvas.h" />
-    <ClInclude Include="C:\Users\ei11105\Downloads\CanvasExampleFiles\LineTool.h" />
-    <ClInclude Include="C:\Users\ei11105\Downloads\CanvasExampleFiles\PointTool.h" />
+    <ClInclude Include="src\Canvascamera.h" />
+    <ClInclude Include="src\CanvasInterface.h" />
+    <ClInclude Include="src\CanvasScene.h" />
+    <ClInclude Include="src\CanvasTool.h" />
+    <ClInclude Include="src\CGFcanvas.h" />
     <ClInclude Include="src\ExampleObject.h" />
+    <ClInclude Include="src\LineTool.h" />
+    <ClInclude Include="src\PointTool.h" />
+    <ClInclude Include="src\RectTool.h" />
     <ClInclude Include="src\TPscene.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C:\Users\ei11105\Downloads\CanvasExampleFiles\Canvascamera.cpp" />
-    <ClCompile Include="C:\Users\ei11105\Downloads\CanvasExampleFiles\CanvasInterface.cpp" />
-    <ClCompile Include="C:\Users\ei11105\Downloads\CanvasExampleFiles\CanvasScene.cpp" />
-    <ClCompile Include="C:\Users\ei11105\Downloads\CanvasExampleFiles\CGFcanvas.cpp" />
-    <ClCompile Include="C:\Users\ei11105\Downloads\CanvasExampleFiles\LineTool.cpp" />
-    <ClCompile Include="C:\Users\ei11105\Downloads\CanvasExampleFiles\main.cpp" />
-    <ClCompile Include="C:\Users\ei11105\Downloads\CanvasExampleFiles\PointTool.cpp" />
+    <ClCompile Include="src\Canvascamera.cpp" />
+    <ClCompile Include="src\CanvasInterface.cpp" />
+    <ClCompile Include="src\CanvasScene.cpp" />
+    <ClCompile Include="src\CGFcanvas.cpp" />
+    <ClCompile Include="src\LineTool.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\PointTool.cpp" />
+    <ClCompile Include="src\RectTool.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

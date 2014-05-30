@@ -1,16 +1,14 @@
 /* 
-* G0_Base: projeto inicial de CGra
-* 
-*/
+ * G0_Base: projeto inicial de CGra
+ * 
+ */
 
 #include <iostream>
 #include <exception>
 
 #include "CGFapplication.h"
-#include "LightingScene.h"
-#include "Plane.h"
-#include "myCylinder.h"
-
+#include "CanvasScene.h"
+#include "CanvasInterface.h"
 
 using std::cout;
 using std::exception;
@@ -18,16 +16,14 @@ using std::exception;
 
 int main(int argc, char* argv[]) {
 
-
-
 	CGFapplication app = CGFapplication();
 
 	try {
 		app.init(&argc, argv);
 
-		app.setScene(new LightingScene());
-		app.setInterface(new CGFinterface());
-
+		app.setScene(new CanvasScene());
+		app.setInterface(new CanvasInterface());
+		
 		app.run();
 	}
 	catch(GLexception& ex) {
