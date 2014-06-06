@@ -54,45 +54,55 @@ void LineTool::drawLine(int xi, int yi, int xf, int yf)
 	// and iterates over x, meaning there will be gaps on octants 2 and 7
 	// where abs(delta y) > abs(delta x)
 
-	int a, b, d, inc1, inc2, x, y, incx, incy;
-	double ang = acos((xf - xi) / sqrt( (float)(xf - xi)*(xf - xi) + (float)(yf - yi)*(yf - yi) ) );
-	ang = ang * PI / 180; //radians to degrees
-	if(ang >= 0 && ang <= 45) { //1st octant
-	} else if( ang > 45 && ang <= 135 ) { //2nd  & 3rd octant
-		int tmp;
-		tmp = xi;
-		xi = yi;
-		yi = tmp;
-
-		tmp = xf;
-		xf = yf;
-		yf = tmp;
-	} //else if( ang > 90 && ang <= 135) {
-
-	if( xf < xi )
-		incx = -1;
-	else
+	int dx, dy, d, inc1, inc2, x, y, incx, incy;
+	
+	dx = xf - xi;
+	if (dx>0)
 		incx = 1;
-	if(yf < yi)
-		incy = -1;
-	else
+	else {
+		dx = -dx;
+		incx = -1;
+	}
+
+	dy = yf - yi;
+	if (dy > 0)
 		incy = 1;
+	else {
+		dy = -dy;
+		incy = -1;
+	}
 
-	a = xf - xi;
-	b = yf - yi;
-	inc2 = 2*b;
-	d = inc2 - a;
-	inc1 = d - a;
-	 x = xi;
-	 y = yi;
+	x = xi;
+	y = yi;
 
-	 for(int i = 0; i < a; i++) {
-		 canvas->setPixel(x,y);
-		 x += incx;
-		 if( d >= 0) {
-			 y += incy;
-			 d += inc1;
-		 } else
-			 d += inc2;
-	 }
+	if(dx >= dy) {
+		inc2 = 2*dy;
+		d = inc2 - dx;
+		inc1 = d - dx;
+
+
+		for(int i = 0; i < dx; i++) {
+			canvas->setPixel(x,y);
+			x += incx;
+			if( d >= 0) {
+				y += incy;
+				d += inc1;
+			} else
+				d += inc2;
+		}
+	} else {
+		inc2 = 2*dx;
+		d = inc2 - dy;
+		inc1 = d - dy;
+
+		for(int i = 0; i < dy; i++) {
+			canvas->setPixel(x,y);
+			y += incy;
+			if( d >= 0) {
+				x += incx;
+				d += inc1;
+			} else
+				d += inc2;
+		}
+	}
 }
